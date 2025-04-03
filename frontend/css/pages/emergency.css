@@ -1,0 +1,156 @@
+body {
+    background: url('../../assets/images/emergency.webp') center/cover fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+}
+
+.features-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.emergency-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.emergency-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.emergency-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+.emergency-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.emergency-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.5);
+}
+
+.emergency-button img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.emergency-button span {
+    max-width: 140px;
+    text-align: center;
+}
+
+.button-description {
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.call-only {
+    background-color: #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.call-only:hover {
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+.call-location {
+    background-color: #e67e22;
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+
+.call-location:hover {
+    box-shadow: 0 6px 16px rgba(230, 126, 34, 0.4);
+}
+
+.call-location-family {
+    background-color: #e74c3c;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.call-location-family:hover {
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.disclaimer {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+}
+
+.disclaimer p {
+    color: #555;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.helpline-card {
+    text-align: center;
+}
+
+.helpline-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin: 10px 0 15px;
+}
+
+@media (max-width: 900px) {
+    .emergency-buttons {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .emergency-button {
+        width: 150px;
+        height: 150px;
+        font-size: 1rem;
+    }
+
+    .emergency-button img {
+        width: 40px;
+        height: 40px;
+    }
+}

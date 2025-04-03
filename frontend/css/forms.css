@@ -1,0 +1,374 @@
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #9b59b6;
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    margin-right: 8px;
+}
+
+.form-checkbox label {
+    margin-bottom: 0;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 8px 8px 8px 35px;
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+    font-weight: 500;
+    min-height: 1rem;
+}
+
+input.error,
+select.error,
+textarea.error {
+    border-color: #e74c3c !important;
+}
+
+.btn-submit,
+.btn-auth {
+    background: #8e44ad;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover,
+.btn-auth:hover {
+    background: #9b59b6;
+}
+
+.btn-auth {
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-row-equal {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.form-row-equal .form-group {
+    flex: 1;
+    width: 50%;
+    min-width: 0;
+}
+
+.auth-container {
+    width: 90%;
+    max-width: 360px;
+    padding: 20px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-header img {
+    max-width: 140px;
+    margin-bottom: 10px;
+}
+
+.auth-header h1 {
+    margin: 0 0 5px;
+    color: #8e44ad;
+    font-size: 1.5rem;
+}
+
+.auth-header p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 14px;
+}
+
+.appointment-layout {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.appointment-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.appointment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form-container {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.complaint-form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.complaint-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.complaint-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.complaint-info img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-text {
+    flex: 1;
+}
+
+.complaint-text h3 {
+    color: #8e44ad;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.complaint-text p {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-form h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form .btn-submit {
+    width: 100%;
+    background: #8e44ad;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: background 0.3s;
+}
+
+.contact-form .btn-submit:hover {
+    background: #9b59b6;
+}
+
+@media (max-width: 900px) {
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-row-equal {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row-equal {
+        flex-direction: column;
+    }
+
+    .form-row-equal .form-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .appointment-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .appointment-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .appointment-form-container {
+        width: 100%;
+    }
+
+    .appointment-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .complaint-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .complaint-info img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-container {
+        width: 92%;
+    }
+}
