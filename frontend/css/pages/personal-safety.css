@@ -1,0 +1,145 @@
+body {
+    background: url("../../assets/images/self_defense3.webp") center/cover fixed;
+    
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+  }
+  
+  .video-wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .video-wrapper iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 405px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* Blue glow on hover */
+  .spray-card:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7); /* Blue glow */
+  }
+  
+  /* Button panel style */
+  .spray-buttons {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    transition: bottom 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 5;
+  }
+  
+  /* Slide up on hover */
+  .spray-card:hover .spray-buttons {
+    bottom: 10px;
+    opacity: 1;
+  }
+  
+  /* Button look */
+  .spray-buttons button {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Icon size */
+  .spray-buttons img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Hover glow for red & green */
+  .spray-buttons .spray-btn:hover {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.7);
+  }
+  
+  .spray-buttons .not-spray-btn:hover {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    box-shadow: 0 0 14px rgba(34, 197, 94, 0.7);
+  }
+  
+  /* Sprayed state */
+  .spray-card.sprayed {
+    background-color: #fee2e2 !important;
+  }
+  
+  /* Not sprayed state */
+  .spray-card.not-sprayed {
+    background-color: #dcfce7 !important;
+  }
+  
+  .alarm-card:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+    position: relative;
+  }
+  
+  .alarm-buttons {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    transition: bottom 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 5;
+  }
+  
+  .alarm-card:hover .alarm-buttons {
+    bottom: 20px;
+    opacity: 1;
+  }
+  
+  .alarm-buttons .alarm-btn {
+    background: linear-gradient(135deg, #f97316, #fb923c); /* orange-ish */
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 14px rgba(251, 146, 60, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .alarm-buttons .alarm-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .alarm-buttons .alarm-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(251, 146, 60, 0.8);
+  }
+  

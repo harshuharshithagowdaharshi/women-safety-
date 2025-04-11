@@ -1,0 +1,169 @@
+body {
+    background: url('../../assets/images/legal2.webp') center/cover fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+}
+
+/* NGO Directory Styling */
+.ngo-directory {
+    margin: 3rem 0;
+}
+
+.ngo-categories {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.ngo-categories button {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.ngo-categories button.active {
+    background: #6c63ff;
+    color: white;
+}
+
+.ngo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.ngo-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ngo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ngo-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.ngo-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.ngo-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.ngo-card a {
+    display: inline-block;
+    color: #6c63ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.ngo-card a:hover {
+    color: #4a42d1;
+    text-decoration: underline;
+}
+
+
+/* Popup Styling */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: popIn 0.3s ease-out;
+  }
+  
+  @keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .popup-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .popup-content h3 {
+    color: #6c63ff;
+    margin-bottom: 1rem;
+  }
+  
+  .popup-details {
+    text-align: left;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f9f9ff;
+    border-radius: 8px;
+  }
+  
+  .btn-popup-close {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-popup-close:hover {
+    background: #5a52d6;
+  }
+  
+  .close-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+  }

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Safety - Women Safety Web Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/logos/logo.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/pages/personal-safety.css" />
+  </head>
+  <body class="protected">
+    <div class="container">
+      <header>
+        <div class="container">
+          <nav>
+            <div class="logo">
+              <a href="index.html">
+                <img src="assets/logos/logo.svg" alt="Women Safety" />
+              </a>
+            </div>
+            <button class="mobile-menu-btn" type="button">
+              <img src="assets/icons/menu.svg" alt="Menu" />
+            </button>
+            <ul class="nav-list">
+              <li>
+                <a href="personal-safety.html" class="active"
+                  >Personal Safety</a
+                >
+              </li>
+              <li><a href="treatments.html">Treatments</a></li>
+              <li>
+                <a href="digital-safety.html">Digital Cyber Safety</a>
+              </li>
+              <li>
+                <a href="workplace-safety.html">Workplace Safety</a>
+              </li>
+              <li>
+                <a href="emergency.html">Emergency Safety</a>
+              </li>
+              <li>
+                <a href="legal-social.html">Legal & Social</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <h1>Personal Safety</h1>
+              <p>
+                Learn essential safety practices and techniques to protect
+                yourself in everyday situations.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="safety-section content-section tools">
+          <div class="container">
+            <h2>Safety Tools</h2>
+            <div class="section-image">
+              <img
+                src="assets/images/self_defense1.webp"
+                alt="Personal Safety Tools"
+              />
+            </div>
+            <div class="safety-grid card-grid">
+              <div class="safety-card content-card spray-card">
+                <img src="assets/icons/check-circle.svg" alt="Safety Tool" class="safety-icon card-icon" />
+                <h3>Pepper Spray</h3>
+                <p>
+                  Carry pepper spray for self-defense when legal in your area.
+                  It temporarily blinds attackers, giving you time to escape to
+                  safety.
+                </p>
+                <div class="spray-buttons">
+                  <button class="spray-btn" onclick="markSprayed(this)">
+                    <img src="assets/icons/pepper-spray.svg" alt="Spray Icon" />
+                  </button>
+                  <button class="not-spray-btn" onclick="markNotSprayed(this)">
+                    <img src="assets/icons/check-circle.svg" alt="Safe Icon" />
+                  </button>
+                </div>
+              </div>
+              
+              <div class="safety-card content-card alarm-card">
+                <img src="assets/icons/check-circle.svg" alt="Safety Tool" class="safety-icon card-icon" />
+                <h3>Personal Alarm</h3>
+                <p>
+                  Carry a personal alarm that emits a loud sound to deter attackers
+                  and draw attention in emergency situations.
+                </p>
+                <div class="alarm-buttons">
+                  <button class="alarm-btn ring-btn" onclick="playAlarm(this)">
+                    <img src="assets/icons/alarm.svg" alt="Ring Alarm" />
+                  </button>
+                  <button class="alarm-btn stop-btn" onclick="stopAlarm(this)" style="display: none;">
+                    <img src="assets/icons/stop-button.svg" alt="Stop Alarm" />
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Hidden audio element -->
+              <audio id="alarmSound" src="assets/audio/alarm.mp3" preload="auto"></audio>
+              
+            </div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/As9XC2G16DE"
+                title="Self Defense Tools for Women"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section class="safety-section content-section awareness">
+          <div class="container">
+            <h2>Self-awareness Information</h2>
+            <div class="section-image">
+              <img src="assets/images/awareness.webp" alt="Self-awareness" />
+            </div>
+            <div class="safety-grid card-grid">
+              <div class="safety-card content-card">
+                <img
+                  src="assets/icons/check-circle.svg"
+                  alt="Awareness"
+                  class="safety-icon card-icon"
+                />
+                <h3>Situational Awareness</h3>
+                <p>
+                  Always be aware of your surroundings. Limit distractions like
+                  headphones and phone use when in public places.
+                </p>
+              </div>
+              <div class="safety-card content-card">
+                <img
+                  src="assets/icons/check-circle.svg"
+                  alt="Awareness"
+                  class="safety-icon card-icon"
+                />
+                <h3>Trust Your Instincts</h3>
+                <p>
+                  If a situation feels unsafe, trust your gut feeling. Don't
+                  worry about appearing rude or overreacting.
+                </p>
+              </div>
+              <div class="safety-card content-card">
+                <img
+                  src="assets/icons/check-circle.svg"
+                  alt="Awareness"
+                  class="safety-icon card-icon"
+                />
+                <h3>Plan Your Route</h3>
+                <p>
+                  Plan your travel route ahead of time, especially when visiting
+                  unfamiliar areas. Share your plans with someone you trust.
+                </p>
+              </div>
+            </div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/OrX04ZD9XGc"
+                title="Self Defense Tools for Women"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section class="safety-section content-section defense">
+          <div class="container">
+            <h2>Self-defense Techniques</h2>
+            <div class="section-image">
+              <img
+                src="assets/images/self_defense2.webp"
+                alt="Self-defense Techniques"
+              />
+            </div>
+            <div class="safety-grid card-grid">
+              <div class="safety-card content-card">
+                <img
+                  src="assets/icons/check-circle.svg"
+                  alt="Self-defense"
+                  class="safety-icon card-icon"
+                />
+                <h3>Basic Striking</h3>
+                <p>
+                  Learn basic striking techniques that target vulnerable areas
+                  like eyes, nose, throat, and groin to create an opportunity to
+                  escape.
+                </p>
+              </div>
+              <div class="safety-card content-card">
+                <img
+                  src="assets/icons/check-circle.svg"
+                  alt="Self-defense"
+                  class="safety-icon card-icon"
+                />
+                <h3>Breaking Holds</h3>
+                <p>
+                  Learn techniques to break free if someone grabs your wrist,
+                  arm, clothing, or puts you in a bear hug.
+                </p>
+              </div>
+              <div class="safety-card content-card">
+                <img
+                  src="assets/icons/check-circle.svg"
+                  alt="Self-defense"
+                  class="safety-icon card-icon"
+                />
+                <h3>Verbal De-escalation</h3>
+                <p>
+                  Practice verbal techniques to de-escalate tense situations and
+                  create boundaries with potential harassers.
+                </p>
+              </div>
+            </div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/1O5J19lhGwg"
+                title="Self Defense Tools for Women"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-info">
+              <img
+                src="assets/logos/logo.svg"
+                alt="Women Safety"
+                class="footer-logo"
+              />
+              <p>
+                Empowering women through safety awareness, education, and
+                resources.
+              </p>
+              <p>&copy; 2025 Women Safety Web Application</p>
+              <div class="social-links">
+                <a href="#"
+                  ><img src="assets/icons/facebook.svg" alt="Facebook"
+                /></a>
+                <a href="#"
+                  ><img src="assets/icons/twitter.svg" alt="Twitter"
+                /></a>
+                <a href="#"
+                  ><img src="assets/icons/instagram.svg" alt="Instagram"
+                /></a>
+                <a href="#"
+                  ><img src="assets/icons/linkedin.svg" alt="LinkedIn"
+                /></a>
+              </div>
+            </div>
+            <div class="contact-form">
+              <h3>Contact Us</h3>
+              <form id="contactForm">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <span class="error-message" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required
+                  />
+                  <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required
+                  />
+                  <span class="error-message" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                  <span class="error-message" id="messageError"></span>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/personal-safety.js"></script>
+  </body>
+</html>

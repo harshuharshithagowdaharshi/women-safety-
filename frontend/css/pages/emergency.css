@@ -1,0 +1,312 @@
+body {
+    background: url('../../assets/images/emergency.webp') center/cover fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+}
+
+.features-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.emergency-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.emergency-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.emergency-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+.emergency-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.emergency-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.5);
+}
+
+.emergency-button img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.emergency-button span {
+    max-width: 140px;
+    text-align: center;
+}
+
+.button-description {
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.call-only {
+    background-color: #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.call-only:hover {
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+.call-location {
+    background-color: #e67e22;
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+
+.call-location:hover {
+    box-shadow: 0 6px 16px rgba(230, 126, 34, 0.4);
+}
+
+.call-location-family {
+    background-color: #e74c3c;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.call-location-family:hover {
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.disclaimer {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+}
+
+.disclaimer p {
+    color: #555;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.helpline-card {
+    text-align: center;
+}
+
+.helpline-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin: 10px 0 15px;
+}
+
+@media (max-width: 900px) {
+    .emergency-buttons {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .emergency-button {
+        width: 150px;
+        height: 150px;
+        font-size: 1rem;
+    }
+
+    .emergency-button img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* ===== Emergency Popup Styles ===== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: popIn 0.3s ease-out;
+  }
+  
+  .emergency-popup .popup-content {
+    border-left: 6px solid #ff4444;
+  }
+  
+  @keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .popup-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+  }
+  
+  .emergency-popup .popup-icon {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .popup-content h3 {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .popup-details {
+    text-align: left;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .popup-details ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  
+  .popup-details li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .emergency-countdown {
+    background: #ffebee;
+    color: #f44336;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  #countdown {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 1.5em;
+  }
+  
+  .popup-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  
+  .btn-popup-cancel,
+  .btn-popup-confirm {
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+    max-width: 200px;
+  }
+  
+  .btn-popup-cancel {
+    background: #f44336;
+    color: white;
+  }
+  
+  .btn-popup-confirm {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  .btn-popup-cancel:hover {
+    background: #d32f2f;
+  }
+  
+  .btn-popup-confirm:hover {
+    background: #388E3C;
+  }
+  
+  .close-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .popup-content {
+      padding: 1.5rem;
+    }
+    
+    .popup-buttons {
+      flex-direction: column;
+    }
+    
+    .btn-popup-cancel,
+    .btn-popup-confirm {
+      max-width: none;
+      width: 100%;
+    }
+  }

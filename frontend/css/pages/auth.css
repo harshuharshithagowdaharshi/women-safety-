@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url('../../assets/images/touch.webp') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+@media (max-width: 576px) {
+    .auth-container {
+        width: 92%;
+    }
+}
