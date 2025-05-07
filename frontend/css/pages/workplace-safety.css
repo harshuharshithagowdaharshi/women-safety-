@@ -12,3 +12,62 @@ body::before {
     background: rgba(0, 0, 0, 0);
     z-index: -1;
 }
+
+.helpful-resources {
+    background-color: #f0f4f8;
+    padding: 50px 20px;
+    border-radius: 16px;
+    margin-top: 60px;
+  }
+  
+  .helpful-resources h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #8e44ad;
+    font-weight: 600;
+  }
+  
+  .resource-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .resource-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resource-card img {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+  
+  .resource-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: #8e44ad;
+  }
+  
+  .resource-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
