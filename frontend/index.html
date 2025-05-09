@@ -1,226 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home - Women Safety Web Application</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="shortcut icon"
-            href="assets/logos/logo.ico"
-            type="image/x-icon"
-        />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/forms.css" />
-        <link rel="stylesheet" href="css/sections.css" />
-        <link rel="stylesheet" href="css/pages/home.css" />
-        
-    </head>
-    <body class="protected">
-        <div class="container">
-            <header>
-                <div class="container">
-                    <nav>
-                        <div class="logo">
-                            <a href="index.html">
-                                <img
-                                    src="assets/logos/logo.svg"
-                                    alt="Women Safety"
-                                />
-                            </a>
-                        </div>
-                        <button class="mobile-menu-btn" type="button">
-                            <img src="assets/icons/menu.svg" alt="Menu" />
-                        </button>
-                        <ul class="nav-list">
-                            <li>
-                                <a href="personal-safety.html">Personal Safety</a>
-                            </li>
-                            <li><a href="treatments.html">Treatments</a></li>
-                            <li>
-                                <a href="digital-safety.html">Digital Cyber Safety</a>
-                            </li>
-                            <li>
-                                <a href="workplace-safety.html">Workplace Safety</a>
-                            </li>
-                            <li><a href="emergency.html">Emergency Safety</a></li>
-                            <li><a href="legal-social.html">Legal & Social</a></li>
-                        </ul>
-                    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Women Safety Web Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/logos/logo.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/pages/home.css" />
+    <style>
+      /* Temporary styles for dropdowns until external CSS loads */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        min-width: 200px;
+        border-radius: 4px;
+      }
+      .dropdown-menu.show {
+        display: block;
+      }
+      .dropdown-content a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+        text-decoration: none;
+      }
+      .dropdown-content a:hover {
+        background-color: #f5f5f5;
+      }
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+        .nav-list {
+          display: none;
+        }
+        .nav-list.show {
+          display: block;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background: #fff;
+          z-index: 100;
+        }
+      }
+    </style>
+  </head>
+  <body class="protected">
+    <div class="container-home">
+      <div class="container-home">
+        <header>
+          <div class="container-home">
+            <nav>
+              <div class="logo">
+                <a href="index.html">
+                  <img src="assets/logos/logo.svg" alt="Women Safety" />
+                </a>
+              </div>
+              <button class="mobile-menu-btn" type="button">
+                <img src="assets/icons/menu.svg" alt="Menu" />
+              </button>
+              <ul class="nav-list">
+                <li>
+                  <a href="personal-safety.html">Personal Safety</a>
+                </li>
+                <li><a href="treatments.html">Treatments</a></li>
+                <li>
+                  <a href="digital-safety.html">Digital Cyber Safety</a>
+                </li>
+                <li>
+                  <a href="workplace-safety.html">Workplace Safety</a>
+                </li>
+                <li><a href="emergency.html">Emergency Safety</a></li>
+                <li><a href="legal-social.html">Legal & Social</a></li>
+              </ul>
+
+              <!-- Enhanced Search Bar -->
+              <div class="search-container">
+                <input
+                  type="text"
+                  placeholder="Search resources..."
+                  id="searchInput"
+                  aria-label="Search resources"
+                />
+                <button type="button" id="searchButton" aria-label="Search">
+                  <img src="assets/icons/search.svg" alt="Search" width="16" />
+                </button>
+                <div class="search-results" id="searchResults"></div>
+              </div>
+
+              <!-- Three Action Dropdowns -->
+              <div class="header-actions">
+                <!-- Safety Tips Dropdown -->
+                <div class="action-dropdown">
+                  <button class="action-btn">
+                    <img
+                      src="assets/icons/safety-tips.svg"
+                      alt="Safety Tips"
+                      width="20"
+                    />
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                      <a href="personal-safety.html#tips"
+                        >Personal Safety Tips</a
+                      >
+                      <a href="digital-safety.html#tips">Online Safety Tips</a>
+                      <a href="workplace-safety.html#tips">Workplace Safety</a>
+                      <a href="emergency.html#tips">Emergency Preparedness</a>
+                    </div>
+                  </div>
                 </div>
-            </header>
 
-            <main>
-                <section class="hero">
-                    <div class="container">
-                        <div class="hero-content">
-                            <h1>Empowering Women Through Safety & Awareness</h1>
-                            <p>
-                                Access resources, information, and tools
-                                designed to help women stay safe and informed.
-                            </p>
-                            <a href="register.html" class="btn btn-primary"
-                                >Join Our Community</a
-                            >
-                        </div>
+                <!-- Report Incident (with modal) -->
+                <div class="action-dropdown">
+                  <button class="action-btn" id="reportIncidentBtn">
+                    <img
+                      src="assets/icons/report.svg"
+                      alt="Report Incident"
+                      width="20"
+                    />
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                      <a href="#" class="report-option" data-type="harassment"
+                        >Harassment</a
+                      >
+                      <a href="#" class="report-option" data-type="workplace"
+                        >Workplace Incident</a
+                      >
+                      <a href="#" class="report-option" data-type="online"
+                        >Online Abuse</a
+                      >
+                      <a href="#" class="report-option" data-type="emergency"
+                        >Emergency</a
+                      >
                     </div>
-                </section>
-
-                <section class="features content-section">
-                    <div class="container">
-                        <h2>Safety Resources</h2>
-                        <div class="feature-grid card-grid">
-                            <div class="feature-card content-card">
-                                <img
-                                    src="assets/icons/shield.svg"
-                                    alt="Personal Safety"
-                                    class="feature-icon card-icon"
-                                />
-                                <h3>Personal Safety</h3>
-                                <p>
-                                    Learn essential safety tips and strategies
-                                    for everyday situations.
-                                </p>
-                            </div>
-                            <div class="feature-card content-card">
-                                <img
-                                    src="assets/icons/health.svg"
-                                    alt="Safe Treatments"
-                                    class="feature-icon card-icon"
-                                />
-                                <h3>Safe Treatments</h3>
-                                <p>
-                                    Information about safe medical treatments
-                                    and healthcare rights.
-                                </p>
-                            </div>
-                            <div class="feature-card content-card">
-                                <img
-                                    src="assets/icons/computer.svg"
-                                    alt="Digital Safety"
-                                    class="feature-icon card-icon"
-                                />
-                                <h3>Digital Cyber Safety</h3>
-                                <p>
-                                    Protect yourself online with our
-                                    cybersecurity resources.
-                                </p>
-                            </div>
-                            <div class="feature-card content-card">
-                                <img
-                                    src="assets/icons/workplace.svg"
-                                    alt="Workplace Safety"
-                                    class="feature-icon card-icon"
-                                />
-                                <h3>Workplace Safety</h3>
-                                <p>
-                                    Resources for creating and maintaining a
-                                    safe workplace environment.
-                                </p>
-                            </div>
-                            <div class="feature-card content-card">
-                                <img
-                                    src="assets/icons/emergency.svg"
-                                    alt="Emergency Safety"
-                                    class="feature-icon card-icon"
-                                />
-                                <h3>Emergency Safety</h3>
-                                <p>
-                                    Quick access to emergency resources and
-                                    response protocols.
-                                </p>
-                            </div>
-                            <div class="feature-card content-card">
-                                <img
-                                    src="assets/icons/justice.svg"
-                                    alt="Legal & Social"
-                                    class="feature-icon card-icon"
-                                />
-                                <h3>Legal & Social Awareness</h3>
-                                <p>
-                                    Know your legal rights and access social
-                                    support networks.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <footer>
-                <div class="container">
-                    <div class="footer-content">
-                        <div class="footer-info">
-                            <img
-                                src="assets/logos/logo.svg"
-                                alt="Women Safety"
-                                class="footer-logo"
-                            />
-                            <p>
-                                Empowering women through safety awareness,
-                                education, and resources.
-                            </p>
-                            <p>&copy; 2025 Women Safety Web Application</p>
-                            <div class="social-links">
-                                <a href="#"><img src="assets/icons/facebook.svg" alt="Facebook" /></a>
-                                <a href="#"><img src="assets/icons/twitter.svg" alt="Twitter" /></a>
-                                <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
-                                <a href="#"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></a>
-                            </div>
-                        </div>
-                        <div class="contact-form">
-                            <h3>Contact Us</h3>
-                            <form id="contactForm">
-                                <div class="form-group">
-                                    <input type="text" id="name" placeholder="Your Name" required />
-                                    <span class="error-message" id="nameError"></span>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" id="phone" placeholder="Phone Number" required />
-                                    <span class="error-message" id="phoneError"></span>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" id="email" placeholder="Email Address" required />
-                                    <span class="error-message" id="emailError"></span>
-                                </div>
-                                <div class="form-group">
-                                    <textarea id="message" placeholder="Your Message" required></textarea>
-                                    <span class="error-message" id="messageError"></span>
-                                </div>
-                                <button type="submit" class="btn-submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- 🌐 Google Translate Section -->
-                    <div class="translate-container">
-                        <h4>Translate this site in your language</h4>
-                        <div id="google_translate_element"></div>
-                    </div>
+                  </div>
                 </div>
-            </footer>
+
+                <!-- Support Groups Dropdown -->
+                <div class="action-dropdown">
+                  <button class="action-btn">
+                    <img
+                      src="assets/icons/support-group.svg"
+                      alt="Support Groups"
+                      width="20"
+                    />
+                  </button>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                      <!-- New support groups -->
+                      <a href="#" target="_blank">Udayan Shalini Fellowship</a>
+                      <a href="#" target="_blank">Kritagyata Trust</a>
+                      <a href="#" target="_blank">Shivashakthi Mahila Sangha</a>
+                      <a href="#" target="_blank"
+                        >Sayodhya Home For Women In Need</a
+                      >
+                      <a
+                        href="https://www.smilefoundationindia.org/women-empowerment/"
+                        target="_blank"
+                        >Smile Foundation - Women Empowerment</a
+                      >
+                      <a href="#" target="_blank">Women on Wings</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+      </div>
+
+      <!-- Report Incident Modal -->
+      <div id="reportModal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h3>Report Incident</h3>
+          <div id="modalMessage">
+            <p>
+              Your <span id="incidentType"></span> report has been submitted.
+            </p>
+            <p>
+              Our team will contact you shortly. For immediate assistance,
+              please call emergency services.
+            </p>
+          </div>
+          <div class="modal-buttons">
+            <button id="confirmReport" class="btn-primary">OK</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Scripts -->
-        <script src="js/main.js"></script>
-        <script src="js/validation.js"></script>
-        <script src="js/pages/home.js"></script>
+      <main>
+        <section class="hero">
+          <!-- Video Background with more reliable implementation -->
+          <video class="hero-video-bg" autoplay muted loop playsinline>
+            <source src="assets/videos/video.mp4" type="video/mp4" />
+            <!-- Alternative formats for better browser support -->
+            <source src="assets/videos/video.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
 
-        <!-- Google Translate Script -->
-        <script type="text/javascript">
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'en',
-                    includedLanguages: 'hi,ta,te,bn,ml,kn,gu,pa,mr,ur',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                }, 'google_translate_element');
+          <div class="container">
+            <div class="hero-content">
+              <h1>Empowering Women Through Safety & Awareness</h1>
+              <p>
+                Access resources, information, and tools designed to help women
+                stay safe and informed in all aspects of life.
+              </p>
+              <a href="register.html" class="btn btn-primary"
+                >Join Our Community</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="features content-section">
+          <div class="container">
+            <h2>Safety Resources</h2>
+            <div class="feature-grid card-grid">
+              <div class="feature-card content-card">
+                <img
+                  src="assets/icons/shield.svg"
+                  alt="Personal Safety"
+                  class="feature-icon card-icon"
+                />
+                <h3>Personal Safety</h3>
+                <p>
+                  Learn essential safety tips and strategies for everyday
+                  situations.
+                </p>
+              </div>
+              <div class="feature-card content-card">
+                <img
+                  src="assets/icons/health.svg"
+                  alt="Safe Treatments"
+                  class="feature-icon card-icon"
+                />
+                <h3>Safe Treatments</h3>
+                <p>
+                  Information about safe medical treatments and healthcare
+                  rights.
+                </p>
+              </div>
+              <div class="feature-card content-card">
+                <img
+                  src="assets/icons/computer.svg"
+                  alt="Digital Safety"
+                  class="feature-icon card-icon"
+                />
+                <h3>Digital Cyber Safety</h3>
+                <p>Protect yourself online with our cybersecurity resources.</p>
+              </div>
+              <div class="feature-card content-card">
+                <img
+                  src="assets/icons/workplace.svg"
+                  alt="Workplace Safety"
+                  class="feature-icon card-icon"
+                />
+                <h3>Workplace Safety</h3>
+                <p>
+                  Resources for creating and maintaining a safe workplace
+                  environment.
+                </p>
+              </div>
+              <div class="feature-card content-card">
+                <img
+                  src="assets/icons/emergency.svg"
+                  alt="Emergency Safety"
+                  class="feature-icon card-icon"
+                />
+                <h3>Emergency Safety</h3>
+                <p>
+                  Quick access to emergency resources and response protocols.
+                </p>
+              </div>
+              <div class="feature-card content-card">
+                <img
+                  src="assets/icons/justice.svg"
+                  alt="Legal & Social"
+                  class="feature-icon card-icon"
+                />
+                <h3>Legal & Social Awareness</h3>
+                <p>
+                  Know your legal rights and access social support networks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-info">
+              <img
+                src="assets/logos/logo.svg"
+                alt="Women Safety"
+                class="footer-logo"
+              />
+              <p>
+                Empowering women through safety awareness, education, and
+                resources.
+              </p>
+              <p>&copy; 2025 Women Safety Web Application</p>
+              <div class="social-links">
+                <a href="#"
+                  ><img src="assets/icons/facebook.svg" alt="Facebook"
+                /></a>
+                <a href="#"
+                  ><img src="assets/icons/twitter.svg" alt="Twitter"
+                /></a>
+                <a href="#"
+                  ><img src="assets/icons/instagram.svg" alt="Instagram"
+                /></a>
+                <a href="#"
+                  ><img src="assets/icons/linkedin.svg" alt="LinkedIn"
+                /></a>
+              </div>
+            </div>
+            <div class="contact-form">
+              <h3>Contact Us</h3>
+              <form id="contactForm">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <span class="error-message" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required
+                  />
+                  <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required
+                  />
+                  <span class="error-message" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                  <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                  <span class="error-message" id="messageError"></span>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Google Translate Section -->
+          <div class="translate-container">
+            <h4>Translate this site in your language</h4>
+            <div id="google_translate_element"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Video Background Fallback JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.querySelector(".hero-video-bg");
+
+        // Check if video is playing (some browsers block autoplay)
+        video.play().catch((error) => {
+          console.log("Video autoplay prevented, showing fallback background");
+          // The CSS gradient fallback will automatically show
+        });
+      });
+    </script>
+
+    <!-- Search Functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const searchResults = document.getElementById("searchResults");
+
+        // Sample search data
+        const searchData = [
+          {
+            title: "Personal Safety Tips",
+            url: "personal-safety.html",
+            category: "Personal Safety",
+          },
+          {
+            title: "Travel Safety Guide",
+            url: "personal-safety.html#travel",
+            category: "Personal Safety",
+          },
+          {
+            title: "Emergency Contacts",
+            url: "emergency.html#contacts",
+            category: "Emergency",
+          },
+          {
+            title: "Workplace Harassment Policies",
+            url: "workplace-safety.html#policies",
+            category: "Workplace Safety",
+          },
+          {
+            title: "Online Privacy Protection",
+            url: "digital-safety.html#privacy",
+            category: "Digital Safety",
+          },
+          {
+            title: "Legal Rights for Women",
+            url: "legal-social.html#rights",
+            category: "Legal & Social",
+          },
+          {
+            title: "Medical Treatments Information",
+            url: "treatments.html",
+            category: "Treatments",
+          },
+        ];
+
+        searchInput.addEventListener("input", function () {
+          const query = this.value.toLowerCase();
+          searchResults.innerHTML = "";
+
+          if (query.length < 2) {
+            searchResults.style.display = "none";
+            return;
+          }
+
+          const results = searchData.filter(
+            (item) =>
+              item.title.toLowerCase().includes(query) ||
+              item.category.toLowerCase().includes(query)
+          );
+
+          if (results.length > 0) {
+            results.forEach((result) => {
+              const link = document.createElement("a");
+              link.href = result.url;
+              link.innerHTML = <strong>${result.title}</strong><br><small>${result.category}</small>;
+              searchResults.appendChild(link);
+            });
+            searchResults.style.display = "block";
+          } else {
+            searchResults.innerHTML =
+              '<div class="no-results">No results found</div>';
+            searchResults.style.display = "block";
+          }
+        });
+
+        // Hide results when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !searchInput.contains(e.target) &&
+            !searchResults.contains(e.target)
+          ) {
+            searchResults.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const navList = document.querySelector(".nav-list");
+
+        mobileMenuBtn.addEventListener("click", function () {
+          navList.classList.toggle("show");
+        });
+
+        // Dropdown functionality
+        const actionButtons = document.querySelectorAll(".action-btn");
+
+        actionButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.classList.contains("show");
+
+            // Close all other dropdowns first
+            document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+              if (menu !== dropdown) {
+                menu.classList.remove("show");
+              }
+            });
+
+            // Toggle current dropdown
+            dropdown.classList.toggle("show");
+          });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            menu.classList.remove("show");
+          });
+        });
+
+        // Prevent dropdown from closing when clicking inside
+        document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+          menu.addEventListener("click", function (e) {
+            e.stopPropagation();
+          });
+        });
+
+        // Report Incident Modal
+        const modal = document.getElementById("reportModal");
+        const reportBtns = document.querySelectorAll(".report-option");
+        const incidentTypeSpan = document.getElementById("incidentType");
+        const closeModal = document.querySelector(".close-modal");
+        const confirmBtn = document.getElementById("confirmReport");
+
+        reportBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const type = this.getAttribute("data-type");
+            let typeText = "";
+
+            switch (type) {
+              case "harassment":
+                typeText = "harassment";
+                break;
+              case "workplace":
+                typeText = "workplace incident";
+                break;
+              case "online":
+                typeText = "online abuse";
+                break;
+              case "emergency":
+                typeText = "emergency";
+                break;
             }
-        </script>
-        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    </body>
+
+            incidentTypeSpan.textContent = typeText;
+            modal.style.display = "block";
+
+            // Close any open dropdowns
+            document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+              menu.classList.remove("show");
+            });
+          });
+        });
+
+        closeModal.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+
+        confirmBtn.addEventListener("click", function () {
+          modal.style.display = "none";
+          // Here you could add code to actually submit the report
+        });
+
+        window.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "hi,ta,te,bn,ml,kn,gu,pa,mr,ur",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
 </html>
