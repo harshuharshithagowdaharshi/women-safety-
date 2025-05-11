@@ -27,6 +27,16 @@
     outline: none;
 }
 
+#contactForm input {
+    outline: none;
+}
+#contactForm textarea {
+    outline: none;
+}
+#contactForm button {
+    background-color: #c74ef0;
+}
+
 .form-group textarea {
     min-height: 100px;
     resize: vertical;
@@ -257,7 +267,7 @@ textarea.error {
 }
 
 .complaint-text p {
-    color: #555;
+    color: white;
     margin-bottom: 1rem;
     line-height: 1.6;
 }

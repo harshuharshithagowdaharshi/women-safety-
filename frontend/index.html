@@ -19,6 +19,22 @@
     <link rel="stylesheet" href="css/forms.css" />
     <link rel="stylesheet" href="css/sections.css" />
     <link rel="stylesheet" href="css/pages/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Pacifico&family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Borel&family=Emilys+Candy&family=Pacifico&family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <style>
       /* Temporary styles for dropdowns until external CSS loads */
       .dropdown-menu {
@@ -73,9 +89,10 @@
         <header>
           <div class="container-home">
             <nav>
-              <div class="logo">
+              <div class="logo logo-main">
                 <a href="index.html">
-                  <img src="assets/logos/logo.svg" alt="Women Safety" />
+                  <img src="assets/logos/newLogo.png" alt="Women Safety" />
+                  <span class="logo-text">Women's Safety</span>
                 </a>
               </div>
               <button class="mobile-menu-btn" type="button">
@@ -111,83 +128,6 @@
               </div>
 
               <!-- Three Action Dropdowns -->
-              <div class="header-actions">
-                <!-- Safety Tips Dropdown -->
-                <div class="action-dropdown">
-                  <button class="action-btn">
-                    <img
-                      src="assets/icons/safety-tips.svg"
-                      alt="Safety Tips"
-                      width="20"
-                    />
-                  </button>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-content">
-                      <a href="personal-safety.html#tips"
-                        >Personal Safety Tips</a
-                      >
-                      <a href="digital-safety.html#tips">Online Safety Tips</a>
-                      <a href="workplace-safety.html#tips">Workplace Safety</a>
-                      <a href="emergency.html#tips">Emergency Preparedness</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Report Incident (with modal) -->
-                <div class="action-dropdown">
-                  <button class="action-btn" id="reportIncidentBtn">
-                    <img
-                      src="assets/icons/report.svg"
-                      alt="Report Incident"
-                      width="20"
-                    />
-                  </button>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-content">
-                      <a href="#" class="report-option" data-type="harassment"
-                        >Harassment</a
-                      >
-                      <a href="#" class="report-option" data-type="workplace"
-                        >Workplace Incident</a
-                      >
-                      <a href="#" class="report-option" data-type="online"
-                        >Online Abuse</a
-                      >
-                      <a href="#" class="report-option" data-type="emergency"
-                        >Emergency</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Support Groups Dropdown -->
-                <div class="action-dropdown">
-                  <button class="action-btn">
-                    <img
-                      src="assets/icons/support-group.svg"
-                      alt="Support Groups"
-                      width="20"
-                    />
-                  </button>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-content">
-                      <!-- New support groups -->
-                      <a href="#" target="_blank">Udayan Shalini Fellowship</a>
-                      <a href="#" target="_blank">Kritagyata Trust</a>
-                      <a href="#" target="_blank">Shivashakthi Mahila Sangha</a>
-                      <a href="#" target="_blank"
-                        >Sayodhya Home For Women In Need</a
-                      >
-                      <a
-                        href="https://www.smilefoundationindia.org/women-empowerment/"
-                        target="_blank"
-                        >Smile Foundation - Women Empowerment</a
-                      >
-                      <a href="#" target="_blank">Women on Wings</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </nav>
           </div>
         </header>
@@ -214,197 +154,355 @@
       </div>
 
       <main>
-        <section class="hero">
-          <!-- Video Background with more reliable implementation -->
-          <video class="hero-video-bg" autoplay muted loop playsinline>
-            <source src="assets/videos/video.mp4" type="video/mp4" />
-            <!-- Alternative formats for better browser support -->
-            <source src="assets/videos/video.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-
-          <div class="container">
+        <section class="hero" data-aos="fade-up">
+          <div class="container container-flex" data-aos="fade-up">
             <div class="hero-content">
               <h1>Empowering Women Through Safety & Awareness</h1>
               <p>
                 Access resources, information, and tools designed to help women
                 stay safe and informed in all aspects of life.
               </p>
-              <a href="register.html" class="btn btn-primary"
-                >Join Our Community</a
-              >
+              <a href="register.html" class="btn">Join Our Community</a>
+              <div class="header-actions">
+                <div class="action-dropdown">
+                  <a href="#safety-tips" class="action-btn">
+                    Safety Tips
+                    <img
+                      src="assets/icons/women-safety.png"
+                      alt="Safety Tips"
+                      width="25"
+                    />
+                  </a>
+                  <a href="#report-incident" class="action-btn" id="reportIncidentBtn">
+                    Report Incident
+                    <img
+                      src="assets/icons/report.png"
+                      alt="Report Incident"
+                      width="20"
+                    />
+                  </a>
+                  <a class="action-btn" href="#support-group">
+                    Support Groups
+                    <img
+                      src="assets/icons/team-support.png"
+                      alt="Support Groups"
+                      width="20"
+                    />
+                  </a>
+              </div>
             </div>
           </div>
+            <div class="hero-image">
+              <img src="assets/logos/newLogo.png" alt="Personal Safety" />
+            </div>
+            </div>
         </section>
 
         <section class="features content-section">
           <div class="container">
-            <h2>Safety Resources</h2>
-            <div class="feature-grid card-grid">
-              <div class="feature-card content-card">
-                <img
-                  src="assets/icons/shield.svg"
-                  alt="Personal Safety"
-                  class="feature-icon card-icon"
-                />
-                <h3>Personal Safety</h3>
-                <p>
-                  Learn essential safety tips and strategies for everyday
-                  situations.
-                </p>
-              </div>
-              <div class="feature-card content-card">
-                <img
-                  src="assets/icons/health.svg"
-                  alt="Safe Treatments"
-                  class="feature-icon card-icon"
-                />
-                <h3>Safe Treatments</h3>
-                <p>
-                  Information about safe medical treatments and healthcare
-                  rights.
-                </p>
-              </div>
-              <div class="feature-card content-card">
-                <img
-                  src="assets/icons/computer.svg"
-                  alt="Digital Safety"
-                  class="feature-icon card-icon"
-                />
-                <h3>Digital Cyber Safety</h3>
-                <p>Protect yourself online with our cybersecurity resources.</p>
-              </div>
-              <div class="feature-card content-card">
-                <img
-                  src="assets/icons/workplace.svg"
-                  alt="Workplace Safety"
-                  class="feature-icon card-icon"
-                />
-                <h3>Workplace Safety</h3>
-                <p>
-                  Resources for creating and maintaining a safe workplace
-                  environment.
-                </p>
-              </div>
-              <div class="feature-card content-card">
-                <img
-                  src="assets/icons/emergency.svg"
-                  alt="Emergency Safety"
-                  class="feature-icon card-icon"
-                />
-                <h3>Emergency Safety</h3>
-                <p>
-                  Quick access to emergency resources and response protocols.
-                </p>
-              </div>
-              <div class="feature-card content-card">
-                <img
-                  src="assets/icons/justice.svg"
-                  alt="Legal & Social"
-                  class="feature-icon card-icon"
-                />
-                <h3>Legal & Social Awareness</h3>
-                <p>
-                  Know your legal rights and access social support networks.
-                </p>
+            <h2 data-aos="zoom-in">Safety Resources</h2>
+            <div class="feature-wrapper">
+              <div
+                class="feature-grid card-grid"
+                data-aos="fade-down"
+                id="slider"
+              >
+                <div class="feature-card content-card">
+                  <img
+                    src="assets/icons/shield.svg"
+                    alt="Personal Safety"
+                    class="feature-icon card-icon"
+                  />
+                  <h3>Personal Safety</h3>
+                  <p>
+                    Learn essential safety tips and strategies for everyday
+                    situations.
+                  </p>
+                </div>
+                <div class="feature-card content-card">
+                  <img
+                    src="assets/icons/health.svg"
+                    alt="Safe Treatments"
+                    class="feature-icon card-icon"
+                  />
+                  <h3>Safe Treatments</h3>
+                  <p>
+                    Information about safe medical treatments and healthcare
+                    rights.
+                  </p>
+                </div>
+                <div class="feature-card content-card">
+                  <img
+                    src="assets/icons/computer.svg"
+                    alt="Digital Safety"
+                    class="feature-icon card-icon"
+                  />
+                  <h3>Digital Cyber Safety</h3>
+                  <p>
+                    Protect yourself online with our cybersecurity resources.
+                  </p>
+                </div>
+                <div class="feature-card content-card">
+                  <img
+                    src="assets/icons/workplace.svg"
+                    alt="Workplace Safety"
+                    class="feature-icon card-icon"
+                  />
+                  <h3>Workplace Safety</h3>
+                  <p>
+                    Resources for creating and maintaining a safe workplace
+                    environment.
+                  </p>
+                </div>
+                <div class="feature-card content-card">
+                  <img
+                    src="assets/icons/emergency.svg"
+                    alt="Emergency Safety"
+                    class="feature-icon card-icon"
+                  />
+                  <h3>Emergency Safety</h3>
+                  <p>
+                    Quick access to emergency resources and response protocols.
+                  </p>
+                </div>
+                <div class="feature-card content-card">
+                  <img
+                    src="assets/icons/justice.svg"
+                    alt="Legal & Social"
+                    class="feature-icon card-icon"
+                  />
+                  <h3>Legal & Social Awareness</h3>
+                  <p>
+                    Know your legal rights and access social support networks.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
+        <!-- Safety Tips  -->
+        <section class="links-section-head" >
+          <div class="safety-container" >
+            <div><img src="assets/images/reporting.png" /></div>
+            <div class="links-section" id="safety-tips"  >
+              <h1>Safety Tips</h1>
+              <div class="links-section-text" >
+                <p>
+                  Stay aware of your surroundings, especially at night. Trust your
+                  instincts. Share your location with a trusted contact. Avoid
+                  isolated areas. Carry self-defense tools if needed. Keep
+                  emergency numbers handy. Lock doors securely. Use verified
+                  transport. Don't overshare online. Be confident and alert — your
+                  safety matters most.
+                </p>
+                <h4 class="safety-links" >Links to the safety tips</h4>
+                <div class="link-menu">
+                  <div class="dropdown-content">
+                    <ul style="list-style-type: disc;">
+                      <li><a href="personal-safety.html#tips">Personal Safety Tips</a></li>
+                      <li><a href="digital-safety.html#tips">Online Safety Tips</a></li>
+                      <li> <a href="workplace-safety.html#tips">Workplace Safety</a></li>
+                      <li><a href="emergency.html#tips">Emergency Preparedness</a></li>
+                    </ul>
+                </div>
+              </div>
+              </div>
+            </div> 
+          </div>
+          <!-- Report Incident -->
+           <div class="report-container">
+             <div class="links-section" id="report-incident"  >
+               <h2>Report Incident</h2>
+               <div class="links-section-text">
+                 <p>
+                   If you experience or witness any suspicious activity, harassment, or threat, report it immediately. Your action can prevent harm and ensure others' safety. All reports are confidential and taken seriously. Don’t stay silent — speak up. Together, we create a safer environment. Click below to report an incident now.
+                 </p>
+                 <h4 class="report-links">Links to the report inncident</h4>
+                 <div class="link-menu">
+                   <div class="dropdown-content">
+                     <ul style="list-style-type: disc;">
+                       <li>      
+                         <a href="#" class="report-option" data-type="harassment"
+                         >Harassment</a>
+                       </li>
+                       <li>
+                         <a href="#" class="report-option" data-type="workplace"
+                         >Workplace Incident</a>
+                       </li>
+                       <li>
+                         <a href="#" class="report-option" data-type="online"
+                           >Online Abuse</a>
+                         </li>
+                       <li>
+                         <a href="#" class="report-option" data-type="emergency"
+                           >Emergency</a>
+                         </li>
+                     </ul>
+   
+                   </div>
+                 </div>
+               </div>
+               </div>
+            <div><img src="assets/images/report.png" /></div>
+           </div>
+          </div>  
+          <!-- Support Groups        -->
+           <div class="support-container">
+             <div><img src="assets/images/support.png" /></div>
+             <div class="links-section" id="support-group" >
+               <h2>Support Groups</h2>
+               <div class="links-section-text">
+                 <p>
+                   You are not alone. Join our support groups to connect with others who understand. Share experiences, gain strength, and find emotional healing in a safe, judgment-free space. Our community offers guidance, encouragement, and resources for recovery and empowerment. Together, we heal and grow. Find your support group and start connecting today.
+                 </p>
+                 <h4 class="support-links">Links to some support groups</h4>
+                 <div class="link-menu">
+                   <div class="dropdown-content">
+                     <ul style="list-style-type: disc;" >
+                       <li><a href="https://www.udayancare.org/udayan-shalini-fellowship/udayan-shalini-fellowship-programme" target="_blank">Udayan Shalini Fellowship</a></li>
+                       <li><a href="https://www.kritagyata.org/?utm_term=kritagyata%20trust&utm_campaign=NGO%20in%20bangalore&utm_source=adwords&utm_medium=ppc&hsa_acc=9718757600&hsa_cam=615069065&hsa_grp=31541793878&hsa_ad=562147310116&hsa_src=g&hsa_tgt=kwd-298743145589&hsa_kw=kritagyata%20trust&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=615069065&gbraid=0AAAAADRxwqvEK7V7U9Cab_xA2FQYUmEBl&gclid=Cj0KCQjwlYHBBhD9ARIsALRu09qDg54jqproeEXYrreHaM7QpklFDPI3LsSsaEwkhhFlF0Nk6-o_amwaAq55EALw_wcB" target="_blank">Kritagyata Trust</a></li>
+                       <li> <a href="https://shivashakthimahila.com/" target="_blank">Shivashakthi Mahila Sangha</a></li>
+                       <li><a href="https://sayodhya.org/" target="_blank"
+                         >Sayodhya Home For Women In Need</a
+                       ></li>
+                       <li>  <a
+                         href="https://www.smilefoundationindia.org/women-empowerment/"
+                         target="_blank"
+                         >Smile Foundation - Women Empowerment</a
+                       ></li>
+                       <li><a href="https://www.womenonwings.com/" target="_blank">Women on Wings</a></li>
+                     </ul> 
+                   </div>
+                 </div>
+               </div>
+               </div>
+           </div>
+          </div>          
+
+        </section>
       </main>
 
-      <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-info">
-              <img
-                src="assets/logos/logo.svg"
-                alt="Women Safety"
-                class="footer-logo"
-              />
-              <p>
-                Empowering women through safety awareness, education, and
-                resources.
-              </p>
-              <p>&copy; 2025 Women Safety Web Application</p>
-              <div class="social-links">
-                <a href="#"
-                  ><img src="assets/icons/facebook.svg" alt="Facebook"
-                /></a>
-                <a href="#"
-                  ><img src="assets/icons/twitter.svg" alt="Twitter"
-                /></a>
-                <a href="#"
-                  ><img src="assets/icons/instagram.svg" alt="Instagram"
-                /></a>
-                <a href="#"
-                  ><img src="assets/icons/linkedin.svg" alt="LinkedIn"
-                /></a>
-              </div>
-            </div>
-            <div class="contact-form">
-              <h3>Contact Us</h3>
-              <form id="contactForm">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required
-                  />
-                  <span class="error-message" id="nameError"></span>
-                </div>
-                <div class="form-group">
-                  <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Phone Number"
-                    required
-                  />
-                  <span class="error-message" id="phoneError"></span>
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="Email Address"
-                    required
-                  />
-                  <span class="error-message" id="emailError"></span>
-                </div>
-                <div class="form-group">
-                  <textarea
-                    id="message"
-                    placeholder="Your Message"
-                    required
-                  ></textarea>
-                  <span class="error-message" id="messageError"></span>
-                </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-              </form>
+      <footer style="background-color: #111; color: #fff; padding: 2rem 1rem; font-size: 0.9rem;">
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+      
+          <!-- Left Section: Logo + Description -->
+          <div style="flex: 1 1 220px;">
+            <img src="assets/logos/logo.svg" alt="Women Safety" style="height: 32px; margin-bottom: 0.8rem;" />
+            <p style="line-height: 1.4;">
+              Empowering women with tools and resources to stay safe and informed at all times.
+            </p>
+            <p style="margin-top: 0.5rem; color: #aaa;">&copy; 2025 Women Safety Web App</p>
+          </div>
+      
+          <!-- Quick Links -->
+          <div style="flex: 1 1 160px;">
+            <h4 style="margin-bottom: 0.6rem; font-size: 1rem;">Quick Links</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+              <li><a href="/about.html" style="color: #ccc; text-decoration: none;">About Us</a></li>
+              <li><a href="/report.html" style="color: #ccc; text-decoration: none;">Report Incident</a></li>
+              <li><a href="/resources.html" style="color: #ccc; text-decoration: none;">Safety Resources</a></li>
+              <li><a href="/faq.html" style="color: #ccc; text-decoration: none;">FAQs</a></li>
+            </ul>
+          </div>
+      
+          <!-- Contact Info -->
+          <div style="flex: 1 1 200px;">
+            <h4 style="margin-bottom: 0.6rem; font-size: 1rem;">Contact Info</h4>
+            <p>Email: <a href="mailto:support@womensafety.org" style="color: #ccc;">support@womensafety.org</a></p>
+            <p>Helpline ID: <strong>WS-HELPLINE-24x7</strong></p>
+            <p>Emergency Contact: +91-99999-88888</p>
+            <div style="margin-top: 0.8rem;">
+              <a href="#"><img src="assets/icons/facebook.png" alt="Facebook" style="height: 20px;background-color: #fff; margin-right: 0.5rem;" /></a>
+              <a href="#"><img src="assets/icons/twitter.png" alt="Twitter" style="height: 20px; background-color: #fff; margin-right: 0.5rem;" /></a>
+              <a href="#"><img src="assets/icons/instagram.png" alt="Instagram" style="height: 20px; background-color: #fff; margin-right: 0.5rem;" /></a>
+              <a href="#"><img src="assets/icons/linkedin.png" alt="LinkedIn" style="height: 20px;background-color: #fff;" /></a>
             </div>
           </div>
-
-          <!-- Google Translate Section -->
-          <div class="translate-container">
-            <h4>Translate this site in your language</h4>
-            <div id="google_translate_element"></div>
+      
+          <!-- Contact Form -->
+          <div style="flex: 1 1 280px;">
+            <h4 style="margin-bottom: 0.6rem; font-size: 1rem;">Contact Us</h4>
+            <form id="contactForm">
+              <input type="text" id="name" placeholder="Your Name" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+              <input type="tel" id="phone" placeholder="Phone Number" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+              <input type="email" id="email" placeholder="Email Address" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+              <textarea id="message" placeholder="Your Message" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem; resize: vertical;"></textarea>
+              <button type="submit" style="color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Send Message</button>
+            </form>
           </div>
         </div>
+      
+        <!-- Google Translate -->
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <h4 style="margin-bottom: 0.3rem;">Translate this site in your language</h4>
+          <div id="google_translate_element"></div>
+        </div>
       </footer>
+      
+      
+      
     </div>
-
-    <!-- Video Background Fallback JavaScript -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const video = document.querySelector(".hero-video-bg");
+      let currentSlide = 0;
+      const slider = document.getElementById("slider");
+      const cardCount = slider.children.length;
+      const visibleCards = 3;
 
-        // Check if video is playing (some browsers block autoplay)
-        video.play().catch((error) => {
-          console.log("Video autoplay prevented, showing fallback background");
-          // The CSS gradient fallback will automatically show
-        });
-      });
+      function updateSlider() {
+        const card = slider.children[0];
+        const cardStyle = window.getComputedStyle(card);
+        const cardWidth = card.offsetWidth;
+        const cardGap =
+          parseInt(cardStyle.marginRight || cardStyle.gap || 0) || 15;
+
+        const totalCardWidth = cardWidth + cardGap;
+        slider.style.transform = `translateX(-${
+          currentSlide * totalCardWidth * visibleCards
+        }px)`;
+      }
+
+      function nextSlide() {
+        const maxSlide = Math.ceil(cardCount / visibleCards) - 1;
+        if (currentSlide < maxSlide) {
+          currentSlide++;
+          updateSlider();
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSlider();
+        }
+      }
+
+      window.addEventListener("resize", updateSlider);
+      window.addEventListener("load", updateSlider);
+
+      setInterval(nextSlide, 3000)
+      setInterval(prevSlide, 6000)
+    </script>
+
+    <script>
+      const butterflyCount = 2; // number of butterflies to place
+      const body = document.body;
+
+      for (let i = 0; i < butterflyCount; i++) {
+        const xPos = Math.random() * 100; 
+        const yPos = Math.random() * 100; 
+        const size = Math.random() * 20 + 10;
+
+        const butterfly = document.createElement("div");
+        butterfly.style.position = "absolute";
+        butterfly.style.backgroundImage = 'url("assets/images/butterfly.png")';
+        butterfly.style.backgroundSize = "contain";
+        butterfly.style.width = `${size + 10}px`;
+        butterfly.style.height = `${size + 10}px`;
+        butterfly.style.left = `${xPos}%`;
+        butterfly.style.top = `${yPos}%`;
+
+        body.appendChild(butterfly);
+      }
     </script>
 
     <!-- Search Functionality -->
@@ -456,7 +554,7 @@
           const query = this.value.toLowerCase();
           searchResults.innerHTML = "";
 
-          if (query.length < 2) {
+          if (query.length < br > 2) {
             searchResults.style.display = "none";
             return;
           }
@@ -471,7 +569,13 @@
             results.forEach((result) => {
               const link = document.createElement("a");
               link.href = result.url;
-              link.innerHTML = <strong>${result.title}</strong><br><small>${result.category}</small>;
+              link.innerHTML = (
+                <div>
+                  <strong>${result.title}</strong>
+                  <br></br>
+                  <small>${result.category}</small>
+                </div>
+              );
               searchResults.appendChild(link);
             });
             searchResults.style.display = "block";
@@ -593,7 +697,6 @@
         });
       });
     </script>
-
     <!-- Google Translate Script -->
     <script type="text/javascript">
       function googleTranslateElementInit() {
@@ -611,5 +714,12 @@
       type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // animation duration in ms
+        once: true, // whether animation should happen only once
+      });
+    </script>
   </body>
 </html>

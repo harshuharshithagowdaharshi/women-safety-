@@ -1,5 +1,6 @@
 body {
-    background: url('../../assets/images/silence_is_violence.webp') center/cover fixed;
+    /* background: url('../../assets/images/bgImage.jpeg') center/cover fixed; */
+    background-color: #ffffff;
 }
 
 body::before {
@@ -16,7 +17,7 @@ body::before {
 .hero .btn {
     font-size: 1.1rem;
     padding: 12px 28px;
-    background-color: #8e44ad;
+    background-color: rgb(239, 81, 158);
     color: white;
     border: none;
     border-radius: 4px;
@@ -28,7 +29,7 @@ body::before {
 }
 
 .hero .btn:hover {
-    background-color: #9b59b6;
+    background-color: rgb(255, 141, 196);
 }
 
 @media (max-width: 576px) {
