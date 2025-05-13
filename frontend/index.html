@@ -35,6 +35,7 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+    <script defer src="/js/pages/home.js"></script>
     <style>
       /* Temporary styles for dropdowns until external CSS loads */
       .dropdown-menu {
@@ -427,10 +428,15 @@
             <h4 style="margin-bottom: 0.6rem; font-size: 1rem;">Contact Us</h4>
             <form id="contactForm">
               <input type="text" id="name" placeholder="Your Name" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+
               <input type="tel" id="phone" placeholder="Phone Number" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+
               <input type="email" id="email" placeholder="Email Address" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+
               <textarea id="message" placeholder="Your Message" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem; resize: vertical;"></textarea>
+
               <button type="submit" style="color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Send Message</button>
+
             </form>
             <div class="popup-overlay" id="popupOverlay"></div>
 <div class="popup" id="popup">
