@@ -28,8 +28,6 @@ function initContactForm() {
 
     if (!FormValidation.validateRequired(phoneInput.value)) {
       FormValidation.showError(phoneInput, "Please enter your phone number");
-      pattern="[0-9]{10}"
-                      maxlength="10”.  add this
       isValid = false;
       
     }
