@@ -12,6 +12,8 @@ function initContactForm() {
   const emailInput = document.getElementById("email");
   const messageInput = document.getElementById("message");
 
+  console.log(nameInput,phoneInput,emailInput,messageInput);
+
   [nameInput, phoneInput, emailInput, messageInput].forEach((input) =>
     input.addEventListener("input", () => FormValidation.clearError(input))
   );
@@ -28,8 +30,8 @@ function initContactForm() {
 
     if (!FormValidation.validateRequired(phoneInput.value)) {
       FormValidation.showError(phoneInput, "Please enter your phone number");
+
       isValid = false;
-      
     }
 
     if (!FormValidation.validateEmail(emailInput.value)) {
@@ -59,6 +61,8 @@ function initContactForm() {
         email: emailInput.value,
         message: messageInput.value,
       };
+
+      console.log(data);
 
       await window.api.request("/contact", "POST", data);
       contactForm.reset();
