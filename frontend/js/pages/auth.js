@@ -255,7 +255,7 @@ function initRegister() {
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('login-form')) {
         initLogin();
-    } else if (document.getElementById('registerForm')) {
+    } else {
         initRegister();
     }
-}); 
+});

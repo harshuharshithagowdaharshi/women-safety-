@@ -157,8 +157,8 @@
         <section class="hero" data-aos="fade-up">
           <div class="container container-flex" data-aos="fade-up">
             <div class="hero-content">
-              <h1>Empowering Women Through Safety & Awareness</h1>
-              <p>
+              <h1 style="color: rgb(246, 58, 152);" >Empowering Women Through Safety & Awareness</h1>
+              <p style="color: rgb(246, 17, 131);">
                 Access resources, information, and tools designed to help women
                 stay safe and informed in all aspects of life.
               </p>
@@ -200,7 +200,7 @@
 
         <section class="features content-section">
           <div class="container">
-            <h2 data-aos="zoom-in">Safety Resources</h2>
+            <h2 data-aos="zoom-in" style="color: purple; background: #ffffff;">Safety Resources</h2>
             <div class="feature-wrapper">
               <div
                 class="feature-grid card-grid"
@@ -387,7 +387,10 @@
       
           <!-- Left Section: Logo + Description -->
           <div style="flex: 1 1 220px;">
-            <img src="assets/logos/logo.svg" alt="Women Safety" style="height: 32px; margin-bottom: 0.8rem;" />
+                <div style="color: white; display: flex;">
+                  <img src="assets/logos/newLogo.png" alt="Women Safety" style="height: 32px; margin-bottom: 0.8rem;" />
+                  <span class="logo-text">Women's Safety</span>
+                  </div>
             <p style="line-height: 1.4;">
               Empowering women with tools and resources to stay safe and informed at all times.
             </p>
@@ -429,19 +432,41 @@
               <textarea id="message" placeholder="Your Message" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem; resize: vertical;"></textarea>
               <button type="submit" style="color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Send Message</button>
             </form>
-          </div>
+            <div class="popup-overlay" id="popupOverlay"></div>
+<div class="popup" id="popup">
+  <h3>Message Sent!</h3>
+  <p>Thank you for contacting us. We’ll get back to you soon.</p>
+  <button onclick="closePopup()">OK</button>
+</div>
         </div>
       
         <!-- Google Translate -->
         <div style="text-align: center; margin-top: 1.5rem;">
           <h4 style="margin-bottom: 0.3rem;">Translate this site in your language</h4>
-          <div id="google_translate_element"></div>
+          <div id="google_translate_element" style="color: white; display: flex; justify-content: center;">Google</div>
         </div>
       </footer>
-      
-      
-      
     </div>
+
+    <script src="js/pages/home.js"></script>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const popup = document.getElementById("popup");
+  const overlay = document.getElementById("popupOverlay");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop real submission
+    form.reset(); // Optional: clear the form
+    popup.style.display = "block";
+    overlay.style.display = "block";
+  });
+
+  function closePopup() {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+  }
+</script>
     <script>
       let currentSlide = 0;
       const slider = document.getElementById("slider");
@@ -496,10 +521,10 @@
         butterfly.style.position = "absolute";
         butterfly.style.backgroundImage = 'url("assets/images/butterfly.png")';
         butterfly.style.backgroundSize = "contain";
-        butterfly.style.width = `${size + 10}px`;
-        butterfly.style.height = `${size + 10}px`;
-        butterfly.style.left = `${xPos}%`;
-        butterfly.style.top = `${yPos}%`;
+        butterfly.style.width = ${size + 10}px;
+        butterfly.style.height = ${size + 10}px;
+        butterfly.style.left = ${xPos}%;
+        butterfly.style.top = ${yPos}%;
 
         body.appendChild(butterfly);
       }

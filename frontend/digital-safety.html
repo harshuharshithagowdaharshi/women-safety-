@@ -28,7 +28,6 @@
             <div class="logo logo-main">
               <a href="index.html">
                 <img src="assets/logos/newLogo.png" alt="Women Safety" />
-                <span>Women's Safety</span>
               </a>
               <span class="logo-text">Women's Safety</span>
             </div>
@@ -225,7 +224,8 @@
                         type="tel"
                         id="phoneNumber"
                         placeholder="Enter your phone number"
-                        required
+                        required 
+                        pattern="[0-9]{10}" maxlength="10".addthis
                       />
                       <span class="error-message" id="phoneNumberError"></span>
                     </div>
@@ -300,9 +300,9 @@
       </main>
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="js/validation.js"></script>
-    <script src="js/pages/home.js"></script>
     <script src="js/pages/digital-safety.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

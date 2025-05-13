@@ -246,80 +246,84 @@
         </section>
       </main>
 
-      <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-info">
-              <img
-                src="assets/logos/logo.svg"
-                alt="Women Safety"
-                class="footer-logo"
-              />
-              <p>
-                Empowering women through safety awareness, education, and
-                resources.
-              </p>
-              <p>&copy; 2025 Women Safety Web Application</p>
-              <div class="social-links">
-                <a href="#"
-                  ><img src="assets/icons/facebook.svg" alt="Facebook"
-                /></a>
-                <a href="#"
-                  ><img src="assets/icons/twitter.svg" alt="Twitter"
-                /></a>
-                <a href="#"
-                  ><img src="assets/icons/instagram.svg" alt="Instagram"
-                /></a>
-                <a href="#"
-                  ><img src="assets/icons/linkedin.svg" alt="LinkedIn"
-                /></a>
-              </div>
+      <footer style="background-color: #111; color: #fff; padding: 2rem 1rem; font-size: 0.9rem;">
+        <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;">
+      
+          <!-- Left Section: Logo + Description -->
+          <div style="flex: 1 1 220px;">
+            <div style="display: flex; color: white;" >
+            <img src="assets/logos/newLogo.png" alt="Women Safety" style="height: 32px; margin-bottom: 0.8rem;" />
+            <span class="logo-text">Women's Safety</span>
+          </div>
+            <p style="line-height: 1.4;">
+              Empowering women with tools and resources to stay safe and informed at all times.
+            </p>
+            <p style="margin-top: 0.5rem; color: #aaa;">&copy; 2025 Women Safety Web App</p>
+          </div>
+      
+          <!-- Quick Links -->
+          <div style="flex: 1 1 160px;">
+            <h4 style="margin-bottom: 0.6rem; font-size: 1rem;">Quick Links</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+              <li><a href="/about.html" style="color: #ccc; text-decoration: none;">About Us</a></li>
+              <li><a href="/report.html" style="color: #ccc; text-decoration: none;">Report Incident</a></li>
+              <li><a href="/resources.html" style="color: #ccc; text-decoration: none;">Safety Resources</a></li>
+              <li><a href="/faq.html" style="color: #ccc; text-decoration: none;">FAQs</a></li>
+            </ul>
+          </div>
+      
+          <!-- Contact Info -->
+          <div style="flex: 1 1 200px;">
+            <h4 style="margin-bottom: 0.6rem; font-size: 1rem;">Contact Info</h4>
+            <p>Email: <a href="mailto:support@womensafety.org" style="color: #ccc;">support@womensafety.org</a></p>
+            <p>Helpline ID: <strong>WS-HELPLINE-24x7</strong></p>
+            <p>Emergency Contact: +91-99999-88888</p>
+            <div style="margin-top: 0.8rem;">
+              <a href="#"><img src="assets/icons/facebook.png" alt="Facebook" style="height: 20px;background-color: #fff; margin-right: 0.5rem;" /></a>
+              <a href="#"><img src="assets/icons/twitter.png" alt="Twitter" style="height: 20px; background-color: #fff; margin-right: 0.5rem;" /></a>
+              <a href="#"><img src="assets/icons/instagram.png" alt="Instagram" style="height: 20px; background-color: #fff; margin-right: 0.5rem;" /></a>
+              <a href="#"><img src="assets/icons/linkedin.png" alt="LinkedIn" style="height: 20px;background-color: #fff;" /></a>
             </div>
-            <div class="contact-form">
-              <h3>Contact Us</h3>
-              <form id="contactForm">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required
-                  />
-                  <span class="error-message" id="nameError"></span>
-                </div>
-                <div class="form-group">
-                  <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Phone Number"
-                    required
-                  />
-                  <span class="error-message" id="phoneError"></span>
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="Email Address"
-                    required
-                  />
-                  <span class="error-message" id="emailError"></span>
-                </div>
-                <div class="form-group">
-                  <textarea
-                    id="message"
-                    placeholder="Your Message"
-                    required
-                  ></textarea>
-                  <span class="error-message" id="messageError"></span>
-                </div>
-                <button type="submit" class="btn-submit">Send Message</button>
-              </form>
-            </div>
+          </div>
+      
+          <!-- Contact Form -->
+          <div style="flex: 1 1 280px;">
+            <h4 style="margin-bottom: 0.6rem; font-size: 1rem;">Contact Us</h4>
+            <form id="contactForm">
+              <input type="text" id="name" placeholder="Your Name" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+              <input type="tel" id="phone" placeholder="Phone Number" required pattern="[0-9]{10}" maxlength="10".addthis style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+              <input type="email" id="email" placeholder="Email Address" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem;" />
+              <textarea id="message" placeholder="Your Message" required style="width: 100%; margin-bottom: 0.5rem; padding: 0.4rem; resize: vertical;"></textarea>
+              <button type="submit" style="color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Send Message</button>
+            </form>
+                        <div class="popup-overlay" id="popupOverlay"></div>
+<div class="popup" id="popup">
+  <h3>Message Sent!</h3>
+  <p>Thank you for contacting us. We’ll get back to you soon.</p>
+  <button onclick="closePopup()">OK</button>
+</div>
+          </div>
           </div>
         </div>
       </footer>
     </div>
+    <script>
+  const form = document.getElementById("contactForm");
+  const popup = document.getElementById("popup");
+  const overlay = document.getElementById("popupOverlay");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Stop real submission
+    form.reset(); // Optional: clear the form
+    popup.style.display = "block";
+    overlay.style.display = "block";
+  });
+
+  function closePopup() {
+    popup.style.display = "none";
+    overlay.style.display = "none";
+  }
+</script>
 
     <script src="js/main.js"></script>
     <script src="js/validation.js"></script>

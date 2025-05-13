@@ -22,7 +22,7 @@
     <body>
         <div class="auth-container">
             <div class="auth-header">
-                <img src="assets/logos/logo.svg" alt="Women Safety Logo" />
+                <img src="assets/logos/newLogo.png" alt="Women Safety Logo" />
                 <h1>Create Account</h1>
                 <p>Join the Women Safety community</p>
             </div>
@@ -54,7 +54,8 @@
                             alt="Phone Icon"
                             class="input-icon"
                         />
-                        <input type="tel" id="phone" name="phone" required />
+                        <input type="tel" id="phone" name="phone" required 
+                        pattern="[0-9]{10}" maxlength="10".addthis/>
                     </div>
                     <div class="error-message" id="phone-error"></div>
                 </div>
@@ -117,8 +118,9 @@
             </div>
         </div>
 
-        <script src="js/main.js"></script>
-        <script src="js/validation.js"></script>
         <script src="js/pages/auth.js"></script>
+        
+        <script src="js/validation.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

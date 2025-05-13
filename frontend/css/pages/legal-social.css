@@ -167,3 +167,7 @@ body::before {
     cursor: pointer;
     color: #666;
   }
+
+.section-subtitle {
+  color: white;
+}
