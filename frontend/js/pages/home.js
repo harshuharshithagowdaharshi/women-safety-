@@ -68,6 +68,7 @@ function initContactForm() {
       contactForm.reset();
       openPopup();
     } catch (error) {
+      console.log(error)
       showErrorPopup(
         error.message ||
           "Failed to submit your message. Please try again later."
