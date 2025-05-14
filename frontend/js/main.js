@@ -30,40 +30,50 @@ document.addEventListener('DOMContentLoaded', () => {
         isLoggedIn: () => !!localStorage.getItem('token'),
 
         async request(endpoint, method = 'GET', data = null, requiresAuth = true) {
-            const url = `${API_URL}${endpoint}`;
-            const options = {
-                method,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            };
+    const url = `${API_URL}${endpoint}`;
+    const options = {
+        method,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
 
-            if (requiresAuth) {
-                const token = this.getToken();
-                if (!token) {
-                    throw new Error('Authentication required');
-                }
-                options.headers['x-auth-token'] = token;
-            }
+    if (requiresAuth) {
+        const token = this.getToken();
+        if (!token) {
+            throw new Error('Authentication required');
+        }
+        options.headers['x-auth-token'] = token;
+    }
 
-            if (data) {
-                options.body = JSON.stringify(data);
-            }
+    if (data) {
+        options.body = JSON.stringify(data);
+    }
 
-            try {
-                const response = await fetch(url, options);
-                const result = await response.json();
+    try {
+        const response = await fetch(url, options);
 
-                if (!response.ok) {
-                    throw new Error(result.message || 'Request failed');
-                }
+        // Token expired or invalid
+        if (response.status === 401) {
+            console.warn('Token expired or invalid. Logging out...');
+            this.logout();
+            window.location.href = '/login.html';
+            return;
+        }
 
-                return result;
-            } catch (error) {
-                console.error('API Error:', error);
-                throw error;
-            }
-        },
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.message || 'Request failed');
+        }
+
+        return result;
+    } catch (error) {
+        console.error('API Error:', error);
+        throw error;
+    }
+}
+
 
         async login(username, password) {
             const result = await this.request('/auth/login', 'POST', { username, password }, false);
