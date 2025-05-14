@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('API Error:', error);
         throw error;
     }
-}
+},
 
 
         async login(username, password) {
