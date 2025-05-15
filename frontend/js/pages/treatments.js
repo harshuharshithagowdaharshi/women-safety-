@@ -160,28 +160,26 @@ function validateAppointmentForm() {
   });
 
   const emailField = document.getElementById("emailAddress");
-  if (
-    emailField.value.trim() &&
-    !FormValidation.validateEmail(emailField.value.trim())
-  ) {
-    FormValidation.showError(
-      "emailAddress",
-      "Please enter a valid email address"
-    );
-    isValid = false;
-  }
+if (!FormValidation.validateRequired(emailField.value.trim())) {
+  FormValidation.showError("emailAddress", "Email is required");
+  isValid = false;
+} else if (!FormValidation.validateEmail(emailField.value.trim())) {
+  showErrorPopup("Please enter a valid email address");
+  isValid = false;
+}
 
-  const phoneField = document.getElementById("phoneNumber");
-  if (
-    phoneField.value.trim() &&
-    !FormValidation.validatePhone(phoneField.value.trim())
-  ) {
-    FormValidation.showError(
-      "phoneNumber",
-      "Please enter a valid phone number"
-    );
-    isValid = false;
-  }
+
+ const phoneField = document.getElementById("phoneNumber");
+const phoneValue = phoneField.value.trim();
+
+if (!FormValidation.validateRequired(phoneValue)) {
+  FormValidation.showError("phoneNumber", "Phone number is required");
+  isValid = false;
+} else if (!/^\d{10}$/.test(phoneValue)) {
+  showErrorPopup("Phone number must be exactly 10 digits");
+  isValid = false;
+}
+
 
   const dateField = document.getElementById("appointmentDate");
   if (dateField.value) {
@@ -201,4 +199,23 @@ function validateAppointmentForm() {
   }
 
   return isValid;
+}
+
+
+function openPopup() {
+  document.getElementById("popupOverlay").style.display = "block";
+  document.getElementById("popup").style.display = "block";
+}
+function closePopup() {
+  document.getElementById("popupOverlay").style.display = "none";
+  document.getElementById("popup").style.display = "none";
+}
+function showErrorPopup(message) {
+  const popup = document.getElementById("popup");
+  const overlay = document.getElementById("popupOverlay");
+
+  popup.querySelector("h3").textContent = "Error";
+  popup.querySelector("p").textContent = message;
+  popup.style.display = "block";
+  overlay.style.display = "block";
 }
