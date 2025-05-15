@@ -30,7 +30,9 @@ function initContactForm() {
 
     if (!FormValidation.validateRequired(phoneInput.value)) {
       FormValidation.showError(phoneInput, "Please enter your phone number");
-
+      isValid = false;
+    } else if (!/^\d{10}$/.test(phoneInput.value.trim())) {
+      showErrorPopup("Phone number must be exactly 10 digits");
       isValid = false;
     }
 
