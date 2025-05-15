@@ -36,13 +36,14 @@ function initContactForm() {
       isValid = false;
     }
 
-    if (!FormValidation.validateEmail(emailInput.value)) {
-      FormValidation.showError(
-        emailInput,
-        "Please enter a valid email address"
-      );
-      isValid = false;
-    }
+    if (!FormValidation.validateRequired(emailInput.value)) {
+  FormValidation.showError(emailInput, "Please enter your email");
+  isValid = false;
+} else if (!FormValidation.validateEmail(emailInput.value.trim())) {
+  showErrorPopup("Please enter a valid email address");
+  isValid = false;
+}
+
 
     if (!FormValidation.validateRequired(messageInput.value)) {
       FormValidation.showError(messageInput, "Please enter your message");
